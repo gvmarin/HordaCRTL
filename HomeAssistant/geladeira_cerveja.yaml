@@ -1,0 +1,61 @@
+mqtt:
+  # -------------
+  # Temperaturas geladeira
+  sensor:
+    - name: "Temperatura Ferm1"
+      unique_id: geladeira_ferm1
+      device:
+        identifiers: "model"
+        model: "Geladeira Cerveja"
+      state_topic: "Geladeira/stat/Ferm1Temp"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      icon: mdi:thermometer
+
+    - name: "Temperatura Ambiente"
+      unique_id: geladeira_amb
+      device:
+        identifiers: "model"
+        model: "Geladeira Cerveja"
+      state_topic: "Geladeira/stat/AmbTemp"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      icon: mdi:thermometer
+
+    - name: "Temperatura Interna"
+      unique_id: geladeira_int
+      device:
+        identifiers: "model"
+        model: "Geladeira Cerveja"
+      state_topic: "Geladeira/stat/FridgeTemp"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      icon: mdi:thermometer
+
+    - name: "Temperatura Ajustada"
+      unique_id: geladeira_ajt
+      device:
+        identifiers: "model"
+        model: "Geladeira Cerveja"
+      state_topic: "Geladeira/stat/TargetTemp"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      icon: mdi:thermometer
+
+  climate:
+    - name: "Geladeira Cerveja"
+      unique_id: geladeiracerveja
+      current_temperature_topic: "Geladeira/stat/Ferm1Temp"
+      temperature_command_topic: "Geladeira/cmd/TargetTemp"
+      temperature_state_topic: "Geladeira/stat/TargetTemp"
+      min_temp: -9.9
+      max_temp: 99.9
+      temp_step: 0.1
+      precision: 0.1
+      temperature_unit: C
+      mode_state_topic: "Geladeira/stat/Mode"
+      availability_topic: "Geladeira/stat/Availability"
+      modes:
+        - "off"
+        - "cool"
+        - "heat"
