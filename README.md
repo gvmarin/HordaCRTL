@@ -8,4 +8,4 @@ Pode ser integrado via MQTT para visualizar e controlar
 # Licença
 Este equipamento esta coberto pela licença https://creativecommons.org/licenses/by-nc-sa/4.0/
 Voce pode montar e usar este equipamento, pode modificar e criar outras versões, mas precia manter a licença original e os dados do autor.
-Comercializar este produto, qualquer parte ou derivado não é permitido sem consentimento expresso do autor
+Comercializar este produto, qualquer parte ou derivado não é permitido sem consentimento expresso do autor.
