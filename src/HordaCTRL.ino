@@ -1,6 +1,8 @@
 /*
- Controlador de Fermentacão - Geladeira /aquecimento conectado via MQtt 
-
+ Controlador de Fermentacão - Geladeira /aquecimento conectado via MQTT
+ Licenca
+ https://creativecommons.org/licenses/by-nc-sa/4.0/
+ 
  To install the ESP8266 board, (using Arduino 1.6.4+):
   - Add the following 3rd party board manager under "File -> Preferences -> Additional Boards Manager URLs":
        http://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -39,7 +41,7 @@ Wifimanager by tzapu V2.0.17 (V0.15.0)
 *
 */
 /* Pendencias
-* - ajuste temperatura negativa (-0.1 a -0.9) n~ao vai apareceer certo -- OK
+* - ajuste temperatura negativa (-0.1 a -0.9) nao vai aparecer certo -- OK
 * - incluir limites de temp no botao
 * - incluir Bateria na mensagem do Mqtt 
 * - Avaliar so mandar mensagem somente para parametros que mudaram
@@ -105,14 +107,11 @@ const uint8_t cool[] PROGMEM = {
 #define ServerSize 40   // comprimento nome do servidor
 #define UserSize 40   // Comprimento do usuario
 #define PassSize 40   // comprimento da senha
-
+// pode ser alterado via config portal
 char mqtt_server[ServerSize] = "mosquitto.local";
 char user[UserSize]= "mosquitto";  // Usuario
 char pass[PassSize]="123";// senha
 
-
-
-//#define Token "token:1506993457205_dN58q0ZH5dFQ5DXc"  // Token do beebotte
 
 //#define Channel "Geladeira_dev"                           // "equipamento teste"
 #define Channel "Geladeira"                           // "equipamento normal"
