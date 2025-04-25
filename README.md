@@ -39,23 +39,36 @@ eu usei um display de 1.3" baseado no controlador SH1106, ele é bastante comum.
 
 https://a.aliexpress.com/_mtqo1Sb
 
-existe tambem uma versão menos de 0.96" e a maioria é baseado no controlador SSD1306 , o software tambem supporta, basta descomentar as linhas que fazem referencia ao controlador do display (SH1106 ou SSD1306). as vezes pode ser necessario "inverter" o display dependendo da montagem, isso pode ser feito no codigo de forma muito facil
+existe tambem uma versão menos de 0.96" e a maioria é baseado no controlador SSD1306 , o software tambem supporta, basta descomentar as linhas que fazem referencia ao controlador do display SSD1306 e comentar as que fazem referencia ao SH1106. as vezes pode ser necessario "inverter" o display dependendo da montagem, isso pode ser feito no codigo de forma muito facil, commente a linha abaixo no modulo setup() e o display será invertido na vertical.
 
 'display.flipScreenVertically()'
 
 ## Sensor de temperatura
 O sensor usado é o DS1B20, que é um sensor digital I2C com boa precisão.
 o Software supporta 4 sensores
-1º Temperatura ambiente
-2º Temperatura interna na geladeira
-3º Temperatura do fermentador 1
-4º Temperatura do fermentador 2
-Como os sensores são todos ligados no mesmo barramento, o software não tem como identificar qual sensor é usado para cada função, então existe uma rotina que memoriza os sensores na quando o circuito é ligado, abaixo explico como configurar isso
-Eu usei um sensor sem proteção para medir a temperatura ambiente (fora da geladeira) e interna (dentro da geladeira).
-e sensores encapsulados em inox para os fermentadores.
+ - 1º Temperatura ambiente
+ - 2º Temperatura interna na geladeira
+ - 3º Temperatura do fermentador 1
+ - 4º Temperatura do fermentador 2
 
-Sensor sem proteção
+Como os sensores são todos ligados no mesmo barramento, o software não tem como identificar qual sensor é usado para cada função, então existe uma rotina que memoriza os sensores quando o circuito é ligado, Mais abaixo explico como configurar os sensores.
 
+Eu usei um sensor sem proteção para medir a temperatura ambiente, instalado fora da geladeira, e interna, instaldo dentro da geladeira (https://a.aliexpress.com/_mLc1ivV) .
+e sensores encapsulados em inox e a prova d'agua para os fermentadores (https://a.aliexpress.com/_m07BU6f).
+![WhatsApp Image 2025-04-25 at 14 47 26](https://github.com/user-attachments/assets/3a46b935-dc83-44da-a4e7-06d64d4befc1)
+
+Sensor sem proteção https://a.aliexpress.com/_mLc1ivV
+
+Sensor a prova d'agua https://a.aliexpress.com/_m07BU6f
+
+## Encoder
+Para ajustar a temperatura foi usado um encoder rotativo (potenciometro infinito)
+https://a.aliexpress.com/_msf4IYL
+
+## Acionamento do motor da geladeira e da resistencia de aquecimento
+As saidas do circuito são do tipo open collector com o transitor do esquema, podem controlar 600ma e 40V. No conector alem das saidas temos 3.3v, isso é suficiente para acionar reles de estado solido (SSR) e controlar as cargas 110 ou 220VAC, podem ser usados reles, mas alguma adptação pode ser necessária.
+
+https://a.aliexpress.com/_mKYsubD
 
 
 # Licença
