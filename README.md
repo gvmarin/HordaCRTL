@@ -43,11 +43,11 @@ existe tambem uma versão menor de 0.96" e a maioria é baseado no controlador S
 
 'display.flipScreenVertically()'
 
-O Display é dividido em 4 sessões.
- barra de status no alto a direita, mostra, da direita para a esquerda a intensidade do sinal wifi, se está conectado ao servidor MQTT, se está gelando, aquecendo ou ambos desligados e a carga da bateria
- Temperatura ajustada no alto a esquerda (normalmente sensor do fermentador 1)
- Temperatura atual do sensor principal, parte inferior a direita
- demais temperaturas , parte inferior a esquerda (A = temperatura ambiente, I = Temperatura interna da geladeira, 2 = Temperatura do sensor do segundo fermentador)
+O Display é dividido em 4 sessões.\
+barra de status no alto a direita, mostra, da direita para a esquerda a intensidade do sinal wifi, se está conectado ao servidor MQTT, se está gelando, aquecendo ou ambos desligados e a carga da bateria\
+Temperatura ajustada.  no alto a esquerda\ 
+Temperatura atual do sensor principal, parte inferior a direita (normalmente sensor do fermentador 1)\
+Demais temperaturas, parte inferior a esquerda (A = temperatura ambiente, I = Temperatura interna da geladeira, 2 = Temperatura do sensor do segundo fermentador)
 ## Sensor de temperatura
 O sensor usado é o DS18B20, que é um sensor digital I2C com boa precisão.
 o Software supporta 4 sensores
@@ -81,8 +81,8 @@ Use o arduino IDE, installe as ferramentas para ESP8266. tem varios tutoriais na
 - Configure o IDE conforme sua placa, se usar o ESP12E, as configurações principais estão no esquema elétrico.
 - Conecte a placa à USB
 - Selecione a porta
-- Conpile e faça o upload
-- Depois disso caso o circuito esteja conectado ao WiFi, voce pode usar o arduino IDE para gravar atualizaçoes via WiFi 
+- Compile e faça o upload
+- Depois disso caso o circuito esteja conectado ao WiFi, voce pode usar o arduino IDE para gravar atualizações via WiFi 
 # Uso
 ## Primeiro uso após a montagem
 No primeiro uso é ncessário configurar os sensores. para garantir o funcionamento correto siga os passos abaixo:
@@ -96,7 +96,7 @@ b) Caso no momento de ligar o sensor do fermentador 1 não estiver conectado, a 
 c) a avaliação dos sensores é feita sempre que o circuito for ligado, então se voce trocar o sensor do fermentador 1, basta ligar o circuito com ele conectado (sem o sensor Ferm2) que vai funcionar. mas caso voce troque o sensor de Temperatura ambiente ou interna, precisará refazer os passo para garantir que os sensores sejam memorizados corretamente\
 d) todo o processo acima é "logado" via interface serial, caso esteja em duvida voce pode acompanhar com um  cabo serial (ou USB) e um programa de terminal.  
 ## Ajustando a temperatura
-Para ajustar a temperatura, pressione o botão até ouvir o bip, gire o botão no sentido horario para aumentar a temperatura, ou antihorario para diminuir, os incrementos são sempre de 0.5 graus Celsius
+Para ajustar a temperatura, pressione o botão até ouvir o bip, gire o botão no sentido horario para aumentar a temperatura, ou antihorario para diminuir, os incrementos são sempre de 0.5 graus Celsius. Quando estiver ajustando, a temperatura atual irá para o canto superior a esquerda e a temperatura ajustada aparecerá na parte principal da tela. pressione novamente o botão para sair do ajuste e gravar a nova temperatura. caso o botão de ajuste não seja movido pro mais de 10 segundos o controlador sai do modo de ajuste, gravando o valor ajustado.
 ## Conectando a Rede Wifi e Servidor MQTT
 Não é ncessario conectar a uma rede WiFi, nem tampouco a um servidor MQTT. conectando à rede, voce pode atualizar o firware usando o Arduino OTA, conectado ao um servidor MQTT voce pode receber status e configurar a temperatura via servidor.
 Para cofigurar, desligue o circuito, mantenha pressionado o botão e ligue. o Display mostrara que está em modo de configuração e mostrara a Rede e endereço para conectar.
