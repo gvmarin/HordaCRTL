@@ -85,7 +85,7 @@ Use o arduino IDE, installe as ferramentas para ESP8266. tem varios tutoriais na
 - Depois disso caso o circuito esteja conectado ao WiFi, voce pode usar o arduino IDE para gravar atualizações via WiFi 
 # Uso
 ## Primeiro uso após a montagem
-No primeiro uso é ncessário configurar os sensores. para garantir o funcionamento correto siga os passos abaixo:
+No primeiro uso é necessário configurar os sensores. para garantir o funcionamento correto, siga os passos abaixo:
 1. Mantenha apenas o sensor de temperatura ambiente conectado e ligue o circuito, quando a temperatura aparece no display, desligue o circuito
 2. Mantendo o sensor de temperatura ambiente, conecte o sensor de temperatura interna da geladeira, ligue e aguarde as temperaturas aparecerem na tela, desligue o circuito
 3. Mantendo os dois anteriores conectados, conecte o sensor do fermentador 1 (sensor principal) e ligue o circuito, aguarde até as temperaturas aparecerem no display e desligue
@@ -96,7 +96,7 @@ b) Caso no momento de ligar o sensor do fermentador 1 não estiver conectado, a 
 c) a avaliação dos sensores é feita sempre que o circuito for ligado, então se voce trocar o sensor do fermentador 1, basta ligar o circuito com ele conectado (sem o sensor Ferm2) que vai funcionar. mas caso voce troque o sensor de Temperatura ambiente ou interna, precisará refazer os passo para garantir que os sensores sejam memorizados corretamente\
 d) todo o processo acima é "logado" via interface serial, caso esteja em duvida voce pode acompanhar com um  cabo serial (ou USB) e um programa de terminal.  
 ## Ajustando a temperatura
-Para ajustar a temperatura, pressione o botão até ouvir o bip, gire o botão no sentido horario para aumentar a temperatura, ou antihorario para diminuir, os incrementos são sempre de 0.5 graus Celsius. Quando estiver ajustando, a temperatura atual irá para o canto superior a esquerda e a temperatura ajustada aparecerá na parte principal da tela. pressione novamente o botão para sair do ajuste e gravar a nova temperatura. caso o botão de ajuste não seja movido pro mais de 10 segundos o controlador sai do modo de ajuste, gravando o valor ajustado.
+Para ajustar a temperatura, pressione o botão até ouvir o bip, gire o botão no sentido horario para aumentar a temperatura, ou antiorário para diminuir, os incrementos são sempre de 0.5 graus Celsius. Quando estiver ajustando, a temperatura atual irá para o canto superior a esquerda e a temperatura ajustada aparecerá na parte principal da tela. pressione novamente o botão para sair do ajuste e gravar a nova temperatura. caso o botão de ajuste não seja movido pro mais de 10 segundos o controlador sai do modo de ajuste, gravando o valor ajustado.
 ## Conectando a Rede Wifi e Servidor MQTT
 Não é ncessario conectar a uma rede WiFi, nem tampouco a um servidor MQTT. conectando à rede, voce pode atualizar o firware usando o Arduino OTA, conectado ao um servidor MQTT voce pode receber status e configurar a temperatura via servidor.
 Para cofigurar, desligue o circuito, mantenha pressionado o botão e ligue. o Display mostrara que está em modo de configuração e mostrara a Rede e endereço para conectar.
